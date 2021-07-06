@@ -2,10 +2,47 @@
 {% block contant %}
 
 <body>
-    Hellp every one
 
+
+<table><tr><th>Total orders</th></tr> <tr><td>{{total_orders}}</td></tr></table>
+
+    <h1>Customers</h1> 
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+        </tr>
+        {%for cus in customers%}
+            <tr>
+                <td>{{cus.name }}  |</td>
+                <td>{{cus.phone}}</td>
+            </tr>
+    {% endfor %}
+    </table>
+<div>
+    <h1>orders</h1> 
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Status</th>
+            <th>Date Create</th>
+            <th>Update</th>
+            <th>Remove</th>
+            
+        </tr>
+        {%for or in orders%}
+            <tr>
+                <td>{{or.product}} |</td>
+                <td>{{or.status}} | </td>
+                <td>{{or.date_create}} |</td>
+                <td> <a href="">update</a> | </td>
+                <td> <a href="">remove</a></td>
+            </tr>
+    {% endfor %}
+
+</table>
    
-   
+</div>
 </body>
 </html>
 {% endblock%}
