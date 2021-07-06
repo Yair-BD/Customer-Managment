@@ -1,11 +1,20 @@
 {% extends 'accounts/main.html'%}
 {% block contant %}
 
-{% endblock%}
 <body>
-    product
+    <h1>Product</h1> 
+    {% for pr in products %}
+    <td>
+        <tr>{{pr}}  |  {{pr.category}}</tr>
+        <h1></h1>
+    </td>
+    
+
+    {% endfor %}
 
     
 </body>
 </html>
+
+
 {% endblock%}
