@@ -27,6 +27,7 @@
 <div>
     <h1>orders</h1> 
     <table>
+        <h4><a href="{% url 'create_order'  %}">Create Order</a> :</h4>
         <tr>
             <th>Product</th>
             <th>Status</th>
@@ -37,9 +38,9 @@
         </tr>
         {%for or in orders%}
             <tr>
-                <td>{{or.product}} |</td>
-                <td>{{or.status}} | </td>
-                <td>{{or.date_create}} |</td>
+                <td>{{or.product}} </td>
+                <td> | {{ or.status}}  </td>
+                <td> | {{ or.date_create}} </td>
                 <td> <a href="">update</a> | </td>
                 <td> <a href="">remove</a></td>
             </tr>
