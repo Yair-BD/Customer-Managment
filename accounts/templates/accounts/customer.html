@@ -1,7 +1,56 @@
 {% extends 'accounts/main.html'%}
 {% block contant %}
 <body>
-    <h1>Customer</h1>
+    <h1>Customer: {{customers.name }}</h1>
+     
+              <p><a href="">update</p></a>
+             <p><a href="">remove</p></a>
+             
+             <br>
+             <br>
+             <br>
+    
+    <h2>Contact details</h2> 
+   
+            <h3>Name: {{customers.name }}</h3>
+            <h3>Phone: {{customers.phone }}</h3>
+            <h3>Email: {{customers.email }}</h3>
+        
+<br>
+<br>
+<br>
+
+<h2>Total Contact Oreders</h2> 
+   
+            <h3>{{total_orders }}</h3>
+           
+        
+<br>
+<br>
+<br>
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Date Create</th>
+            <th>Update</th>
+            <th>Remove</th>
+            
+        </tr>
+        {%for or in orders%}
+            <tr>
+                <td>{{or.product}} |</td>
+                <td>{{or.product.category}} |</td>
+                <td>{{or.status}} | </td>
+                <td>{{or.date_create}} |</td>
+                <td> <a href="">update</a> | </td>
+                <td> <a href="">remove</a></td>
+            </tr>
+    {% endfor %}
+
+</table>
+ 
 
 </body>
 </html>

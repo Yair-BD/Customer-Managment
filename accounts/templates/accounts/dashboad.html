@@ -5,16 +5,21 @@
 
 
 <table><tr><th>Total orders</th></tr> <tr><td>{{total_orders}}</td></tr></table>
+<table><tr><th>Order delivered</th></tr> <tr><td>{{delivered}}</td></tr></table>
+<table><tr><th>Order pending</th></tr> <tr><td>{{pending}}</td></tr></table>
+
 
     <h1>Customers</h1> 
     <table>
         <tr>
+            
             <th>Name</th>
             <th>Phone</th>
         </tr>
         {%for cus in customers%}
             <tr>
-                <td>{{cus.name }}  |</td>
+                
+                <td><a href="{% url 'customer' cus.id %}">{{cus.name }}</a>|</td>
                 <td>{{cus.phone}}</td>
             </tr>
     {% endfor %}
