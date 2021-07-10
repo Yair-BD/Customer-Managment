@@ -1,0 +1,13 @@
+{% extends 'accounts/main.html'%}
+{% block contant %}
+
+
+<form action="" method="POST">
+    <h1>Delete {{order.product}}</h1>
+
+    {% csrf_token %}
+    <input type="submit" name="Delete">
+</form>
+
+
+{% endblock %}
