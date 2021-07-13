@@ -4,7 +4,7 @@
     <h1>Customer: {{customers.name }}</h1>
      
               <p><a href="">update</p></a>
-             <p><a href="">remove</p></a>
+             <p><a href="{% url 'create_order' customers.id %}">Place Order</p></a>
              
              <br>
              <br>
@@ -44,8 +44,8 @@
                 <td>{{or.product.category}} |</td>
                 <td>{{or.status}} | </td>
                 <td>{{or.date_create}} |</td>
-                <td> <a href="">update</a> | </td>
-                <td> <a href="">remove</a></td>
+                <td> <a href="{% url 'update_order' or.id %}">update</a></td>
+                <td> | <a href="{% url 'delete_order' or.id %}">remove</a></td>
             </tr>
     {% endfor %}
 

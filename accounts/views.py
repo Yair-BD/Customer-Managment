@@ -27,8 +27,9 @@ def customer(request, pk):
     context = {"customers": customers, "orders": orders_customer, "total_orders": total_orders}
     return render(request, 'accounts/customer.html', context)
 
-def createorder(request):
-    form = OrderForm()
+def createorder(request, pk):
+    customer = Customer.objects.get(id=pk)
+    form = OrderForm(initial={"customer":customer}) # לגבי אובייקט מסויים שאני רוה שיהיה לו ערך התחלתי 
     if request.method == 'POST':
         form = OrderForm(request.POST)
         if form.is_valid():
@@ -43,7 +44,7 @@ def update_order(request, pk):
     order = Order.objects.get(id=pk)
     form = OrderForm(instance=order)
     if request.method == 'POST':
-        form = OrderForm(request.POST, instance= order)
+        form = OrderForm(request.POST, instance=order)
         if form.is_valid():
             form.save()
             return redirect('/')
