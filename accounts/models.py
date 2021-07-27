@@ -50,5 +50,6 @@ class Order(models.Model):
     date_create = models.DateTimeField(auto_now_add=True, null=True)
     date_update = models.DateTimeField(auto_now_add=False, auto_now=True, null=True)
     status = models.CharField(max_length=200, null=True, choices=STATUS)
+    note = models.CharField(max_length=200, null=True)
 
 

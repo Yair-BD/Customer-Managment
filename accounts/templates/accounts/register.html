@@ -1,0 +1,21 @@
+<h1>Register</h1>
+
+<form action="" method="POST">
+    {%csrf_token%}
+    {{form.username.label}}
+    {{form.username}}
+    <h1></h1>
+    {{form.email.label}}
+    {{form.email}}
+    <h1></h1>
+    {{form.password1.label}}
+    {{form.password1}}
+    <h1></h1>
+    {{form.password2.label}}
+    {{form.password2}}
+    <h1></h1>
+   
+   
+    <input type="submit" name="Create User">
+    <a href="{% url 'login-page' %}">Log In</a>
+</form>

@@ -30,6 +30,7 @@
         <tr>
             <th>Product</th>
             <th>Status</th>
+            <th>Note</th>
             <th>Date Create</th>
             <th>Last Update</th>
             <th>Update</th>
@@ -40,6 +41,13 @@
             <tr>
                 <td>{{or.product}} </td>
                 <td> | {{ or.status}}  </td>
+
+                {%if or.note == None%}
+                    <td> |   </td>
+                {% else %}
+                    <td> | {{or.note}}   </td>
+                {% endif %}
+                
                 {% if or.date_create == or.date_update %}
                     <td> | {{ or.date_create}} </td>
                     <td> |  </td>
@@ -48,6 +56,7 @@
                     <td> | {{ or.date_create}} </td>
                     <td> | {{ or.date_update}} </td>
                 {% endif %}
+                
                 <td> <a href="{% url 'update_order' or.id %}">update</a></td>
                 <td> | <a href="{% url 'delete_order' or.id %}">remove</a></td>
             </tr>
